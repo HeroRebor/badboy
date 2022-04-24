@@ -43,11 +43,11 @@ def load_config() -> dict:
         CONFIG['engine']['path'] = os.path.join(CONFIG['engine']['dir'], CONFIG['engine']['name'])
 
         if not os.path.isfile(CONFIG['engine']['path']):
-            raise Exception(f'The engine "{CONFIG["engine"]["path"]}" file does not exist.')
+            raise Exception(f'The engine "{CONFIG["engine"]["path"]}" file doesnt exist.')
 
         if not os.access(CONFIG['engine']['path'], os.X_OK):
             raise Exception(
-                f'The engine "{CONFIG["engine"]["path"]}" doesnt have execute (x) permission. Try: chmod +x {CONFIG["engine"]["path"]}')
+                f'The engine "{CONFIG["engine"]["path"]}" doesnt have the execute (x) permission. Try: chmod +x {CONFIG["engine"]["path"]}')
 
         if CONFIG['engine']['opening_books']['enabled']:
             for key, book_list in CONFIG['engine']['opening_books']['books'].items():
